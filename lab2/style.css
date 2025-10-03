@@ -1,0 +1,103 @@
+/* Ерөнхий тохиргоо */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
+    color: #333;
+}
+
+/* Хүснэгт */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-height: 100vh;
+}
+
+/* Толгой хэсэг */
+tr.header td {
+    background: linear-gradient(90deg, #4CAF50, #2E8B57);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Хөл хэсэг */
+tr.footer td {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Цэс хэсэг */
+td.menu {
+    width: 20%;
+    background: #f9f9f9;
+    vertical-align: top;
+    padding: 20px;
+    box-shadow: inset -2px 0px 5px rgba(0,0,0,0.05);
+}
+
+td.menu h3 {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+td.menu a {
+    display: block;
+    padding: 10px 12px;
+    margin: 6px 0;
+    text-decoration: none;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+td.menu a:hover {
+    background: #4CAF50;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Агуулга хэсэг */
+td.content {
+    padding: 30px;
+    background: white;
+    vertical-align: top;
+    box-shadow: inset 0px 0px 15px rgba(0,0,0,0.05);
+}
+
+td.content h2 {
+    color: #2E8B57;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+td.content p {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+td.content img {
+    margin-top: 15px;
+    border-radius: 12px;
+    max-width: 90%;
+    height: auto;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+td.content img:hover {
+    transform: scale(1.02);
+}
