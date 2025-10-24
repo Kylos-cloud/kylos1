@@ -7,100 +7,128 @@
 </head>
 <body>
 
-<div class="header">
-    <h1>[ thefacebook ]</h1>
-    <div class="nav">
-        <a href="#">home</a> |
-        <a href="#">search</a> |
-        <a href="#">global</a> |
-        <a href="#">social net</a> |
-        <a href="#">invite</a> |
-        <a href="#">faq</a> |
-        <a href="#">logout</a>
-    </div>
-</div>
-
-<div class="container">
-
-    <div class="sidebar">
-        <h4>quick search</h4>
-        <input type="text" size="15">
-        <button>go</button>
-
-        <ul>
-            <li><a href="#">My Profile [ edit ]</a></li>
-            <li><a href="#">My Groups</a></li>
-            <li><a href="#">My Friends</a></li>
-            <li><a href="#">My Messages</a></li>
-            <li><a href="#">My Away Message</a></li>
-            <li><a href="#">My Mobile Info</a></li>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">My Privacy</a></li>
-        </ul>
-
-    </div>
-
-    <div class="profile">
-        <div class="profile-header">
-            Narmandakh's profile
-        </div>
-
-        <div class="section">
-            <div class="section-title">
-                Picture <span class="edit">[ edit ]</span>
+<table class="main-table" cellspacing="0" cellpadding="0">
+    <!-- Header -->
+    <tr>
+        <td colspan="2" class="header">
+            <h1>[ thefacebook ]</h1>
+            <div class="nav">
+                <a href="#">home</a> |
+                <a href="#">search</a> |
+                <a href="#">global</a> |
+                <a href="#">social net</a> |
+                <a href="#">invite</a> |
+                <a href="#">faq</a> |
+                <a href="#">logout</a>
             </div>
-            <div class="photo">
-                <img src="hurug2.jpg" alt="profile picture">
-            </div>
-        </div>
+        </td>
+    </tr>
 
-        <div class="section">
-            <div class="section-title">
-                Information <span class="edit">[ edit ]</span>
-            </div>
-            <table>
-                <tr><td colspan="2"><b>Account Info:</b></td></tr>
-                <tr><td>Name:</td><td>Narmandakh Naranbaatar</td></tr>
-                <tr><td>Member Since:</td><td>September 1, 2025</td></tr>
-                <tr><td>Last Update:</td><td>September 30, 2025</td></tr>
+    <!-- Main Content -->
+    <tr>
+        <!-- Sidebar -->
+        <td class="sidebar" width="200" valign="top">
+            <h4>quick search</h4>
+            <input type="text" size="15">
+            <button>go</button>
 
-                <tr><td colspan="2"><b>Basic Info:</b></td></tr>
-                <tr><td>Email:</td><td>23B1NUM414@stud.num.edu.mn</td></tr>
-                <tr><td>Status:</td><td></td></tr>
-                <tr><td>Sex:</td><td>Male</td></tr>
-                <tr><td>Year:</td><td>2025</td></tr>
-                <tr><td>Concentration:</td><td>Software Engineering</td></tr>
-                <tr><td>Phone:</td><td>+97699231312</td></tr>
-                <tr><td>High School:</td><td>NUM High school</td></tr>
-
-                <tr><td colspan="2"><b>Extended Info:</b></td></tr>
-                <tr><td>Screenname:</td><td>Kylos</td></tr>
-                <tr><td>Looking For:</td><td>Friendship, Connection</td></tr>
-                <tr><td>Interested In:</td><td>Women</td></tr>
-                <tr><td>Relationship Status:</td><td>In relationship</td></tr>
-                <tr><td>Political Views:</td><td>Liberal</td></tr>
-                <tr><td>Interests:</td><td>Drinking, Football, Basketball, Tennis</td></tr>
+            <table class="sidebar-links">
+                <tr><td><a href="#">My Profile [ edit ]</a></td></tr>
+                <tr><td><a href="#">My Groups</a></td></tr>
+                <tr><td><a href="#">My Friends</a></td></tr>
+                <tr><td><a href="#">My Messages</a></td></tr>
+                <tr><td><a href="#">My Away Message</a></td></tr>
+                <tr><td><a href="#">My Mobile Info</a></td></tr>
+                <tr><td><a href="#">My Account</a></td></tr>
+                <tr><td><a href="#">My Privacy</a></td></tr>
             </table>
-        </div>
+        </td>
 
-        <div class="links">
-            <a href="#">Visualize My Friends</a><br>
-            <a href="#">Edit My Profile</a><br>
-            <a href="#">My Account Preferences</a><br>
-            <a href="#">My Privacy Preferences</a>
-        </div>
-    </div>
+        <!-- Profile Content -->
+        <td class="profile-content" valign="top">
+            <!-- Profile Header -->
+            <table class="profile-header" width="100%">
+                <tr>
+                    <td>Narmandakh's profile</td>
+                </tr>
+            </table>
 
-</div>
+            <!-- Picture Section -->
+            <table class="section" width="100%" cellspacing="0">
+                <tr>
+                    <td class="section-title">
+                        Picture <span class="edit">[ edit ]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="photo-cell">
+                        <img src="hurug2.jpg" alt="profile picture">
+                    </td>
+                </tr>
+            </table>
 
-<div class="footer">
-    <a href="#">about</a> |
-    <a href="#">contact</a> |
-    <a href="#">jobs</a> |
-    <a href="#">terms</a> |
-    <a href="#">privacy</a>
-    <p><small>Narmandakh production — Thefacebook © 2005</small></p>
-</div>
+            <!-- Information Section -->
+            <table class="section" width="100%" cellspacing="0">
+                <tr>
+                    <td class="section-title">
+                        Information <span class="edit">[ edit ]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="info-table" width="100%">
+                            <tr><td colspan="2"><b>Account Info:</b></td></tr>
+                            <tr><td width="30%">Name:</td><td>Narmandakh Naranbaatar</td></tr>
+                            <tr><td>Member Since:</td><td>September 1, 2025</td></tr>
+                            <tr><td>Last Update:</td><td>September 30, 2025</td></tr>
+
+                            <tr><td colspan="2"><b>Basic Info:</b></td></tr>
+                            <tr><td>Email:</td><td>23B1NUM414@stud.num.edu.mn</td></tr>
+                            <tr><td>Status:</td><td></td></tr>
+                            <tr><td>Sex:</td><td>Male</td></tr>
+                            <tr><td>Year:</td><td>2025</td></tr>
+                            <tr><td>Concentration:</td><td>Software Engineering</td></tr>
+                            <tr><td>Phone:</td><td>+97699231312</td></tr>
+                            <tr><td>High School:</td><td>NUM High school</td></tr>
+
+                            <tr><td colspan="2"><b>Extended Info:</b></td></tr>
+                            <tr><td>Screenname:</td><td>Kylos</td></tr>
+                            <tr><td>Looking For:</td><td>Friendship, Connection</td></tr>
+                            <tr><td>Interested In:</td><td>Women</td></tr>
+                            <tr><td>Relationship Status:</td><td>In relationship</td></tr>
+                            <tr><td>Political Views:</td><td>Liberal</td></tr>
+                            <tr><td>Interests:</td><td>Drinking, Football, Basketball, Tennis</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Links Section -->
+            <table class="links" width="100%">
+                <tr>
+                    <td>
+                        <a href="#">Visualize My Friends</a><br>
+                        <a href="#">Edit My Profile</a><br>
+                        <a href="#">My Account Preferences</a><br>
+                        <a href="#">My Privacy Preferences</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+        <td colspan="2" class="footer">
+            <a href="#">about</a> |
+            <a href="#">contact</a> |
+            <a href="#">jobs</a> |
+            <a href="#">terms</a> |
+            <a href="#">privacy</a>
+            <p><small>Narmandakh production — Thefacebook © 2005</small></p>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
