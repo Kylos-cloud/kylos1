@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+        var n= Number(prompt("Тоогоо оруул:"));
+        var s = String(Math.abs(n));
+        var sum = 0;
+
+        for (var i = 0; i < s.length; i++) {
+          sum += Number(s[i]);
+          }
+
+      var sumStr = String(sum);
+      var rev = sumStr.split("").reverse().join("");
+
+      if (sumStr === rev) {
+          document.write("Палиндром байна");
+      } else {
+          document.write("Палиндром биш");
+      }
+
+    </script>
+  </body>
+</html>

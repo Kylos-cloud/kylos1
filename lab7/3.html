@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+        var olohtoot = Number(prompt("тоот-оо оруул:"));;
+        var niitdavhar = 9;
+        var negdavhariinail = 4;
+        var niitorts = 3;
+
+        var negortsniit = niitdavhar * negdavhariinail;
+
+        var orts = Math.ceil(olohtoot / negortsniit);
+        var index = olohtoot - (orts - 1) * negortsniit;
+
+        var davhar = Math.ceil(index / negdavhariinail);
+        var toot = index - (davhar - 1) * negdavhariinail;
+
+        document.write(orts + "-р орц, " + davhar + " давхар, " + toot + "-р тоот");
+    </script>
+  </body>
+</html>   
+

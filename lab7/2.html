@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+        var distance = Number(prompt("Тоогоо оруул:")); 
+        var wolf = 25; 
+        var rabbit = 18;
+
+        var haritsangui = wolf - rabbit;
+
+        if (haritsangui <= 0) {
+            document.write("Гүйцэхгүй");
+            } else {
+            var hours = distance / haritsangui;
+            var totalSec = Math.round(hours * 3600);
+            var minutes = Math.floor(totalSec / 60);//niit secundees minut oloh heseg
+            var seconds = totalSec % 60;
+
+            document.write(minutes + " мин " + seconds + " сек");
+            }    
+    </script>
+  </body>
+</html>   

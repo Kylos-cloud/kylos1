@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <p id="result"></p>
+    <script>
+        var a = [];
+
+        for (var i = 0; i < 5; i++) {
+              a[i] = Number(prompt((i+1) + "-р тоог оруул:"));}
+
+            console.log(a);
+
+
+        var b = function(x, y) {
+            while (y !== 0) {
+                var t = x % y;
+                x = y;
+                y = t;
+                }
+            return x;
+            };
+
+        var HamgiinBagaErhniiHuvaagdagch = function(x, y) {
+            return Math.abs((x / b(x, y)) * y);
+        };
+
+        var result = a[0];
+        for (var i = 1; i < a.length; i++) {
+           result = HamgiinBagaErhniiHuvaagdagch(result, a[i]);}
+
+        document.write("HamgiinBagaErhniiHuvaagdagch = ", result);
+
+    </script>
+  </body>
+</html>   
+

@@ -8,80 +8,101 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="jumbotron">
-    <div class="container">
-      <h1>Hello, world!</h1>
-      <p>Welcome to Bootstrap v3.3.7. Check out this awesome jumbotron!</p>
-      <a href="#" class="btn-learn">LEARN MORE</a>
+
+<header class="jumbotron">
+  <div class="logo-container">
+    <div class="logo">
+      <img src="webjunto.png" alt="Webjunto Logo">
     </div>
-  </header>
+  </div>
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <p>Welcome to Bootstrap v3.3.7. Check out this awesome jumbotron!</p>
+    <a href="#" class="btn-learn">LEARN MORE</a>
+  </div>
+</header>
 
-  <main class="container main-content">
-    <div class="content-left">
-      <section class="intro">
-        <h2>Heading goes here</h2>
-        <p>
-          Cupcake ipsum dolor sit amet caramels halvah soufflé sugar plum. Fruitcake lollipop tiramisu pastry halvah sweet
-          lemon drops. Jelly beans marshmallow jujubes. Pudding macaroon chocolate cake chupa chups. Tootsie roll wafer
-          jelly beans cotton candy jelly. Liquorice chocolate cake tart jelly. Chocolate pastry liquorice cupcake chocolate.
-        </p>
-      </section>
+<main class="container main-content">
+  <div class="content-left">
 
-      <hr class="divider">
+    <section class="intro">
+      <h2>Heading goes here</h2>
+      <p>
+        Cupcake ipsum dolor sit amet caramels halvah soufflé sugar plum. Fruitcake lollipop tiramisu pastry halvah sweet
+        lemon drops. Jelly beans marshmallow jujubes. Pudding macaroon chocolate cake chupa chups. Tootsie roll wafer
+        jelly beans cotton candy jelly. Liquorice chocolate cake tart jelly. Chocolate pastry liquorice cupcake chocolate.
+      </p>
+    </section>
 
-      <section class="video">
-        <h3>Startup Advice #1 | Build COMMUNITY FIRST...</h3>
-        <div class="video-frame">
-          <iframe 
-            width="100%" 
-            height="400" 
-            src="https://www.youtube.com/embed/2ePf9rue1Ao?si=j99FR0nqcs5XIU4S" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </section>
+    <hr class="divider">
+
+    <section class="video">
+      <h3>Startup Advice #1 | Build COMMUNITY FIRST...</h3>
+      <div class="video-frame">
+        <iframe 
+          width="100%" 
+          height="400" 
+          src="https://www.youtube.com/embed/2ePf9rue1Ao?si=j99FR0nqcs5XIU4S"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <div class="alert-box">
+      <span class="alert-icon">!</span>
+      Whoa! This is a super important alert!
     </div>
 
-    <div class="content-right">
-      <section class="message-box">
-        <div class="messages-header">
-          <span class="msg-icon">✉</span> <span class="msg-count">MESSAGES</span>
-        </div>
+  </div>
 
-        <div class="welcome-card">
-          <h3>Welcome Candidate!</h3>
+  <div class="content-right">
+
+    <div class="messages-header">
+      <span class="msg-icon">✉</span> MESSAGES <span class="msg-badge">3</span>
+    </div>
+      
+    <section class="message-box">
+      <div class="welcome-card">
+        <h3>Welcome Candidate!</h3>
+        <div class="welcome-card-body">
           <p>You are a Starfleet Academy candidate. Greet the Captain in a <em>respectful</em> fashion.</p>
           <form class="greet-form">
-            <input type="text" placeholder="Input your greeting">
+            <input type="text" placeholder="Input your greeting..">
             <button type="submit">SEND</button>
           </form>
-          <small><a href="#">Learn what Starfleet performs on this reference</a></small>
         </div>
-      </section>
-
-      <section class="vote">
-        <h3>Cast your vote! What do you think about space? See vote progress bar below!</h3>
-        <div class="vote-buttons">
-          <a href="#" class="btn cool">COOL</a>
-          <a href="#" class="btn lame">LAME</a>
+        <div class="reference1">
+          <a href="#" class="cta-link">I don't watch Star Trek and don't get this reference</a>
         </div>
-
-        <div class="progress-track">
-          <div class="progress-fill" style="width:75%;"></div>
+          
         </div>
+    </section>
 
-        <p class="vote-result"><strong>75</strong> Cool votes | <strong>25</strong> Lame votes</p>
-      </section>
-    </div>
-  </main>
+    <section class="vote">
+      <h3>Cast your vote! What do you think about space? See vote progress bar below!</h3>
 
-  <footer>
-    <div class="alert-box">Whoa! This is a super important alert!</div>
+      <div class="vote-buttons">
+        <a href="#" class="btn cool">COOL</a>
+        <a href="#" class="btn lame">LAME</a>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" style="width:75%;"></div>
+      </div>
+
+      <p class="vote-result"><strong>75</strong> Cool votes | <strong>25</strong> Lame votes</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
     <p>2017 All Rights Reserved, Some Company.</p>
-  </footer>
+</footer>
+
 </body>
 </html>
