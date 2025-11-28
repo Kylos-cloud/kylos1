@@ -8,13 +8,13 @@
         var negdavhariinail = 4;
         var niitorts = 3;
 
-        var negortsniit = niitdavhar * negdavhariinail;
+        var negortsniit = niitdavhar * negdavhariinail;//neg orts-d bh niit ailiig olno.
 
-        var orts = Math.ceil(olohtoot / negortsniit);
-        var index = olohtoot - (orts - 1) * negortsniit;
+        var orts = Math.ceil(olohtoot / negortsniit);//tuhain oruulsan toot heddeh orts ve gdgin olno.
+        var index = olohtoot - (orts - 1) * negortsniit;//olson orts doo heddeh toot ve gdgin olno.
 
-        var davhar = Math.ceil(index / negdavhariinail);
-        var toot = index - (davhar - 1) * negdavhariinail;
+        var davhar = Math.ceil(index / negdavhariinail);//heddeh davhar ve gdgin olno.
+        var toot = index - (davhar - 1) * negdavhariinail;//tuhain ortsndo hddeh toot ve gdgin olno.
 
         document.write(orts + "-р орц, " + davhar + " давхар, " + toot + "-р тоот");
     </script>
