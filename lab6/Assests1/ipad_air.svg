@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="air_L"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 211.508"
+   xml:space="preserve"
+   sodipodi:docname="IPad_Air.svg"
+   width="1000"
+   height="211.508"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs8" /><sodipodi:namedview
+   id="namedview8"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.78870086"
+   inkscape:cx="652.97253"
+   inkscape:cy="133.76428"
+   inkscape:window-width="1920"
+   inkscape:window-height="991"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="air_L" />
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:#5985B5;}
+	.st1{fill:none;stroke:url(#aCharL_1_);stroke-width:43.1800003;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:919;}
+	.st2{fill:none;stroke:url(#iCharL_1_);stroke-width:43.1800003;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:447;}
+	.st3{fill:none;stroke:url(#rCharL_1_);stroke-width:43.1800003;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:461;}
+</style>
+
+<g
+   id="g12"
+   transform="matrix(0.70254379,0,0,0.70254379,575.62077,-3.4149854e-5)"><g
+     id="g8">
+	<circle
+   id="iDotL"
+   class="st0"
+   cx="338.83087"
+   cy="24.819992"
+   r="24.82"
+   style="fill:#216cb5;fill-opacity:1" />
+	
+		<linearGradient
+   id="aCharL_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="53.435085"
+   y1="250.87152"
+   x2="244.16779"
+   y2="249.98047"
+   gradientTransform="translate(0,-68)">
+		<stop
+   offset="0.1"
+   style="stop-color:#226cb5;stop-opacity:1;"
+   id="stop1" />
+		<stop
+   offset="0.86000001"
+   style="stop-color:#7aabd9;stop-opacity:1;"
+   id="stop2" />
+	</linearGradient>
+	<path
+   id="aCharL"
+   class="st1"
+   d="m 170.67088,127.28 c 0.35825,-4.22711 0.42176,-8.47406 0.19001,-12.70999 -2.57999,-33.950015 -36.28,-42.280002 -64.28,-24.420016 C 88.870895,101.47 72.580887,116.95999 57.10088,137.56 c -26,37.32998 -39.700013,74.26001 -34.149994,103.63998 4.369995,23.23001 26.209991,39.31 53.809993,27 31.760011,-14.08999 86.360021,-87.75 93.110021,-135.79999 l 0.6,-4.17001 c -2.78,22 -15.08999,51.62 -19.66,86.17001 -5.16001,30.37 -1.39002,51.41999 13.10998,60.75 C 183.77089,287.06 217.52089,287.06 309.44092,100.43997"
+   style="stroke:url(#aCharL_1_)" />
+	
+		<linearGradient
+   id="iCharL_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="304.37418"
+   y1="366.13965"
+   x2="386.18558"
+   y2="368.3797"
+   gradientTransform="translate(0,-68)">
+		<stop
+   offset="0"
+   style="stop-color:#226cb5;stop-opacity:1;"
+   id="stop3" />
+		<stop
+   offset="0.82999998"
+   style="stop-color:#7aabd9;stop-opacity:1;"
+   id="stop4" />
+	</linearGradient>
+	<path
+   id="iCharL"
+   class="st2"
+   d="m 309.44092,100.45999 c -3.37,14.07999 -37.32001,72.85999 -37.32001,128.08002 0,24 10.52002,37.73001 22.42999,42.69 11.90998,4.95999 25.81,1.79001 41.89002,-14.10001 C 376.5509,216.83002 427.1709,130.47 459.34094,82.220001"
+   style="stroke:url(#iCharL_1_)" />
+	
+		<linearGradient
+   id="rCharL_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="487.40094"
+   y1="368.55936"
+   x2="513.54083"
+   y2="120.04065"
+   gradientTransform="translate(0,-68)">
+		<stop
+   offset="0"
+   style="stop-color:#216db6;stop-opacity:1;"
+   id="stop5" />
+		<stop
+   offset="0.28999999"
+   style="stop-color:#216bb4;stop-opacity:1;"
+   id="stop6" />
+		<stop
+   offset="0.89999998"
+   style="stop-color:#226db6;stop-opacity:1;"
+   id="stop7" />
+		<stop
+   offset="1"
+   style="stop-color:#216db6;stop-opacity:1;"
+   id="stop8" />
+	</linearGradient>
+	<path
+   id="rCharL"
+   class="st3"
+   d="M 459.34088,82.190002 C 426.58087,214.01999 418.6709,271.60001 418.6709,271.60001 h -0.20001 c 5.76001,-40.9 53.79998,-174.119999 164,-190.60001"
+   style="stroke:url(#rCharL_1_)" />
+</g><text
+     xml:space="preserve"
+     style="font-size:391.928px;line-height:1;font-family:'SF Pro Text';-inkscape-font-specification:'SF Pro Text';text-align:center;letter-spacing:-6.88935px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.59291;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+     x="-445.9729"
+     y="297.34146"
+     id="text12"><tspan
+       sodipodi:role="line"
+       id="tspan12"
+       x="-449.41757"
+       y="297.34146"
+       style="font-size:391.928px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.59291">iPad</tspan></text></g></svg>
