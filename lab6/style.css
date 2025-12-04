@@ -213,25 +213,156 @@ nav{
 }
 
 /* LINKS */
-.links{
+.links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    font-size: 21px;
-    margin-top: 12px;
+    gap: 16px;
+    margin-top: 14px;
 }
 
-.links a{
-    color: #2997ff;
+/* Base Button Style (Apple's exact style) */
+.links a {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 400;
     text-decoration: none;
-    transition: text-decoration 0.3s;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    line-height: 1.17648;
+    min-width: 26px;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.links a:hover{
-    text-decoration: underline;
+.links a {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
 }
 
+.links a:hover {
+    background-color: #0077ed;
+}
+
+.hero .links a {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.hero .links a:hover {
+    background-color: #0077ed;
+    color: white;
+}
+
+.hero-section2 .links a:first-child,
+.hero-section3 .links a:first-child,
+.section4-1 .links a:first-child,
+.section4-2 .links a:first-child,
+.section5-1 .links a:first-child,
+.section5-2 .links a:first-child {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.hero-section2 .links a:first-child:hover,
+.hero-section3 .links a:first-child:hover,
+.section4-1 .links a:first-child:hover,
+.section4-2 .links a:first-child:hover,
+.section5-1 .links a:first-child:hover,
+.section5-2 .links a:first-child:hover {
+    background-color: #0077ed;
+    color: white;
+}
+
+.hero-section2 .links a:nth-child(2),
+.hero-section3 .links a:nth-child(2),
+.section4-1 .links a:nth-child(2),
+.section4-2 .links a:nth-child(2),
+.section5-1 .links a:nth-child(2),
+.section5-2 .links a:nth-child(2) {
+    background-color: transparent;
+    color: #0071e3;
+    border: 1px solid #0071e3;
+}
+
+.hero-section2 .links a:nth-child(2):hover,
+.hero-section3 .links a:nth-child(2):hover,
+.section4-1 .links a:nth-child(2):hover,
+.section4-2 .links a:nth-child(2):hover,
+.section5-1 .links a:nth-child(2):hover,
+.section5-2 .links a:nth-child(2):hover {
+    background-color: #0071e3;
+    color: white;
+    border-color: #0071e3;
+}
+
+.text6 .links a {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.text6 .links a:hover {
+    background-color: #0077ed;
+    color: white;
+}
+
+.text5 .links a {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.text5 .links a:hover {
+    background-color: #0077ed;
+    color: white;
+}
+
+.links a i {
+    font-size: 17px;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+.links a:active {
+    transform: scale(0.98);
+}
+
+.links a:focus {
+    outline: 2px solid #0071e3;
+    outline-offset: 2px;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .links a {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .links a {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+}
 /* TWO-COLUMN GRID */
 .hero-section4{
     width: 100%;
@@ -289,68 +420,356 @@ nav{
 }
 
 /* SLIDER */
-.slider{
-    background-color: #ffffff;
-    height: 692px;
-    width: 100%;
+/* SLIDER */
+/* APPLE STYLE SLIDER - Дэлгэц дүүрэн */
+/* APPLE STYLE SLIDER - Дэлгэц дүүрэн, текст доод талд */
+.apple-slider {
+    width: 100vw;
+    height: 100vh; /* Дэлгэц дүүрэн өндөр */
+    min-height: 692px;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
     margin-bottom: 12px;
 }
 
+.apple-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end; /* Текст доод талд байрлах */
+    justify-content: flex-start; /* Текст зүүн талд байрлах */
+    position: relative;
+    padding-bottom: 60px; /* Доод талын зай */
+}
+
+/* Текст бүрийн байршил - Apple.com-ын яг адил (доод талд) */
+.slide-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px 80px 40px; /* Доод талд илүү их зай */
+    text-align: left; /* Текст зүүн талд */
+    z-index: 10;
+}
+
+.slide-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Текст зүүн талд эхлэх */
+    gap: 8px; /* Apple-ийн яг адил зай */
+    max-width: 600px; /* Текстийн өргөнийг хязгаарлах */
+}
+
+/* Слайд тус бүрийн дэвсгэр зураг */
+.slide-1 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                url('Assests1/guideg1.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.slide-2 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                url('Assests1/guideg2.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.slide-3 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                url('Assests1/guideg3.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.slide-4 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                url('Assests1/guideg4.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.slide-5 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                url('Assests1/guideg5.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Текст хэв маяг - Apple-ийн яг адил (доод талд) */
+.slide-title {
+    font-size: 72px; /* Apple-ийн гол том текст */
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    margin: 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    margin-bottom: 8px;
+    text-align: left; /* Текст зүүн талд */
+}
+
+.slide-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.14286;
+    letter-spacing: 0.007em;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 12px;
+    text-align: left; /* Текст зүүн талд */
+}
+
+.slide-description {
+    font-size: 21px;
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Тайлбар текст (Comedy · Same family. New plan.) */
+.slide-caption {
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 25px 0;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+    max-width: 600px;
+    text-align: left; /* Текст зүүн талд */
+}
+
+/* Товчнууд - Apple-ийн яг адил (доод талд) */
+.slide-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Товчнууд зүүн талд эхлэх */
+}
+
+.slide-buttons a {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    line-height: 1.17648;
+    min-width: 26px;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* SPIRITED слайдын товчнууд */
+.slide-1 .btn-stream {
+    background-color: #0071e3; /* Цэнхэр товч болгох */
+    color: white;
+    border: 1px solid transparent;
+}
+
+.slide-1 .btn-stream:hover {
+    background-color: #0077ed;
+}
+
+/* Бусад слайдын товчнууд */
+.btn-shop, .btn-buy {
+    background-color: #0071e3;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.btn-shop:hover, .btn-buy:hover {
+    background-color: #0077ed;
+}
+
+/* Play icon */
+.btn-play i {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Swiper navigation - Apple стильд тохируулах */
 .swiper {
     width: 100%;
     height: 100%;
 }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #f5f5f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: all 0.3s;
+    top: auto;
+    bottom: 100px; /* Навигацийн товчнууд тексттэй зэрэгцэх */
+    transform: translateY(0);
+    margin-top: 0;
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.swiper-button-next {
+    right: 20px;
 }
 
-.swiper-slide {
-    width: 60%;
+.swiper-button-prev {
+    left: 20px;
 }
 
-.s1{
-    background-image: url("Assests/s1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.s2{
-    background-image: url("Assests/s2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.s3{
-    background-image: url("Assests/s3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.swiper-pagination {
+    bottom: 40px !important; /* Текстээс доош байрлах */
 }
 
-.s4{
-    background-image: url("Assests/s4.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
 }
 
-.s5{
-    background-image: url("Assests/s5.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.swiper-pagination-bullet-active {
+    background: white;
 }
 
+/* RESPONSIVE DESIGN - Бүх төхөөрөмжид тохиромжтой */
+@media (max-width: 1068px) {
+    .slide-title {
+        font-size: 56px;
+    }
+    
+    .slide-subtitle {
+        font-size: 24px;
+    }
+    
+    .slide-description {
+        font-size: 19px;
+    }
+    
+    .slide-caption {
+        font-size: 16px;
+    }
+    
+    .slide-content {
+        padding: 0 30px 70px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .apple-slider {
+        height: 80vh;
+        min-height: 500px;
+    }
+    
+    .apple-slide {
+        padding-bottom: 40px;
+        align-items: flex-end;
+    }
+    
+    .slide-title {
+        font-size: 40px;
+    }
+    
+    .slide-subtitle {
+        font-size: 20px;
+    }
+    
+    .slide-description {
+        font-size: 17px;
+    }
+    
+    .slide-caption {
+        font-size: 15px;
+        max-width: 400px;
+    }
+    
+    .slide-content {
+        padding: 0 20px 60px 20px;
+    }
+    
+    .slide-buttons {
+        flex-direction: column;
+        align-items: flex-start; /* Товчнууд зүүн талд эхлэх */
+        gap: 12px;
+    }
+    
+    .slide-buttons a {
+        width: auto; /* Өргөнийг автоматаар тохируулах */
+        max-width: 280px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Жижиг дэлгэцэд нуух */
+    }
+    
+    .swiper-pagination {
+        bottom: 30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .apple-slider {
+        height: 70vh;
+        min-height: 400px;
+    }
+    
+    .apple-slide {
+        padding-bottom: 30px;
+    }
+    
+    .slide-title {
+        font-size: 32px;
+    }
+    
+    .slide-subtitle {
+        font-size: 18px;
+    }
+    
+    .slide-description {
+        font-size: 16px;
+    }
+    
+    .slide-caption {
+        font-size: 14px;
+        max-width: 300px;
+    }
+    
+    .slide-content {
+        padding: 0 15px 50px 15px;
+    }
+    
+    .slide-buttons a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
 /* FOOTER */
 footer{
     position: relative; /* Add this */
@@ -398,6 +817,31 @@ footer{
     border-top: 1px solid #d2d2d7;
     padding-top: 20px;
 }
+.footer2 a {
+    text-decoration: none;
+    color: #424245;
+    font-size: 12px;
+    display: block;
+    padding: 2px 0;
+    transition: color 0.2s;
+}
+
+.footer2 a:hover {
+    color: #1d1d1f;
+    text-decoration: none;
+}
+
+/* Footer heading styles */
+.footer2 h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 16px 0 8px 0;
+}
+
+.footer2 h4:first-child {
+    margin-top: 0;
+}
 
 .footer2 h4{
     font-size: 12px;
@@ -426,45 +870,61 @@ footer{
     flex-direction: column;
 }
 
-.footer3{
+.footer3 {
     border-top: 1px solid #d2d2d7;
     max-width: 980px;
     margin: 0 auto;
     padding: 20px;
     font-size: 12px;
     color: #6e6e73;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.panel1{
+.panel1 {
     margin-bottom: 8px;
+    flex: 1;
+    min-width: 200px;
 }
 
-.panel2{
+.panel2 {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 8px;
+    flex: 2;
+    justify-content: center;
+    gap: 20px; /* Added gap instead of margin-right */
 }
 
-.panel2 li{
+.panel2 li {
     list-style: none;
-    margin-right: 20px;
     cursor: pointer;
+    color: #424245; /* Make the text visible */
+    white-space: nowrap;
 }
 
-.panel2 li:hover{
+.panel2 li:hover {
     text-decoration: underline;
 }
 
-.panel3 li{
+.panel3 {
+    flex: 1;
+    text-align: right;
+    min-width: 200px;
+}
+
+.panel3 li {
     list-style: none;
 }
 
-.panel3 a{
+.panel3 a {
     color: #424245;
     text-decoration: none;
 }
 
-.panel3 a:hover{
+.panel3 a:hover {
     text-decoration: underline;
 }
 

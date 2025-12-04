@@ -34,39 +34,127 @@ function loco(){
 }
 loco();
 
-// Swiper Slider Configuration
+// Apple Style Swiper Slider - Full Screen
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "1.2",
+    // Apple-style parameters
+    direction: 'horizontal',
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+    slidesPerView: 1,
     centeredSlides: true,
-    spaceBetween: 10,
+    spaceBetween: 0,
+    
+    // Autoplay
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+    
+    // Navigation
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false
-    },
+    
+    // Pagination
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+        },
     },
-    keyboard: true,
-    loop: true,
+    
+    // Effects
+    effect: 'slide',
+    keyboard: {
+        enabled: true,
+    },
+    
+    // Touch interactions
+    touchRatio: 1,
+    touchAngle: 45,
+    simulateTouch: true,
+    shortSwipes: true,
+    longSwipes: true,
+    longSwipesRatio: 0.5,
+    longSwipesMs: 300,
+    
+    // Responsive breakpoints
     breakpoints: {
-        640: {
-            slidesPerView: 1.5,
-            spaceBetween: 15,
+        // Mobile
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
         },
+        // Tablet
         768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 1,
+            spaceBetween: 0,
         },
+        // Desktop
         1024: {
-            slidesPerView: 2.5,
-            spaceBetween: 20,
+            slidesPerView: 1,
+            spaceBetween: 0,
+        }
+    },
+    
+    // Callbacks
+    on: {
+        init: function () {
+            console.log("🍎 Apple Slider initialized");
         },
+        slideChange: function () {
+            console.log("Slide changed to: ", this.activeIndex);
+        }
     }
+});
+
+// Custom navigation button styling
+function styleSwiperButtons() {
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+    
+    if (nextBtn && prevBtn) {
+        // Apple-style navigation buttons
+        [nextBtn, prevBtn].forEach(btn => {
+            btn.style.width = '44px';
+            btn.style.height = '44px';
+            btn.style.borderRadius = '50%';
+            btn.style.background = 'rgba(0, 0, 0, 0.3)';
+            btn.style.backdropFilter = 'saturate(180%) blur(20px)';
+            btn.style.transition = 'all 0.3s ease';
+            btn.style.display = 'flex';
+            btn.style.alignItems = 'center';
+            btn.style.justifyContent = 'center';
+            
+            // Hover effect
+            btn.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(0, 0, 0, 0.5)';
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(0, 0, 0, 0.3)';
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Position buttons
+        nextBtn.style.right = '20px';
+        prevBtn.style.left = '20px';
+    }
+}
+
+// Initialize button styling when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    styleSwiperButtons();
+    
+    // Re-style buttons after Swiper initialization
+    setTimeout(styleSwiperButtons, 100);
 });
 
 // Mobile Menu Toggle
@@ -182,27 +270,68 @@ window.addEventListener("scroll", function(){
     lastScroll = currentScroll;
 });
 
-// GSAP Scroll Animations (Optional)
-// Animate hero sections on scroll
-gsap.utils.toArray('.hero-section').forEach((section, i) => {
-    const text = section.querySelector('.hero-section-p');
+// GSAP Scroll Animations for Apple-style slider
+gsap.utils.toArray('.apple-slide').forEach((slide, i) => {
+    const content = slide.querySelector('.slide-content');
     
-    if (text) {
-        gsap.from(text, {
+    if (content) {
+        // Initial animation when slide becomes active
+        gsap.from(content, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: 0.3,
+        });
+        
+        // Animation on scroll (if you want additional effects)
+        gsap.from(content, {
             opacity: 0,
             y: 50,
             duration: 1,
             ease: "power3.out",
             scrollTrigger: {
-                trigger: section,
+                trigger: slide,
                 scroller: "#main",
                 start: "top 80%",
-                end: "top 50%",
-                toggleActions: "play none none reverse"
+                end: "top 30%",
+                toggleActions: "play none none reverse",
+                // Only trigger once
+                once: true
             }
         });
     }
 });
 
+// Pause autoplay when hovering over slider
+const sliderContainer = document.querySelector('.apple-slider');
+if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', function() {
+        if (swiper.autoplay.running) {
+            swiper.autoplay.stop();
+            console.log("Autoplay paused");
+        }
+    });
+    
+    sliderContainer.addEventListener('mouseleave', function() {
+        if (!swiper.autoplay.running) {
+            swiper.autoplay.start();
+            console.log("Autoplay resumed");
+        }
+    });
+}
+
+// Update slider height on window resize
+function updateSliderHeight() {
+    const slider = document.querySelector('.apple-slider');
+    if (slider) {
+        slider.style.height = window.innerHeight + 'px';
+    }
+}
+
+// Set initial height and update on resize
+updateSliderHeight();
+window.addEventListener('resize', updateSliderHeight);
+
 // Log success
-console.log("🍎 Apple Clone JavaScript loaded successfully!");
+console.log("🍎 Apple Clone JavaScript loaded successfully with full-screen slider!");
