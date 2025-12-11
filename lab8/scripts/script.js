@@ -63,7 +63,7 @@ function handleGuess(letter, button) {
         // WRONG GUESS
         wrongGuessCount++;
         guessesText.innerText = `${wrongGuessCount} / ${maxWrong}`;
-        hangmanImg.src = `/lab8/hangman-game-images/images/hangman-${wrongGuessCount}.svg`;
+        hangmanImg.src = `/hangman-game-images/images/hangman-${wrongGuessCount}.svg`;
 
         button.disabled = true;
 
@@ -93,10 +93,10 @@ function gameOver(won) {
     const modalHeader = gameModal.querySelector("h4");
 
     if (won) {
-        modalImg.src = "/lab8/hangman-game-images/images/victory.gif";
+        modalImg.src = "/hangman-game-images/images/victory.gif";
         modalHeader.innerText = "Та яллаа!";
     } else {
-        modalImg.src = "/lab8/hangman-game-images/images/lost.gif";
+        modalImg.src = "/hangman-game-images/images/lost.gif";
         modalHeader.innerText = "Тоглоом дууслаа!";
     }
 
@@ -107,7 +107,7 @@ function gameOver(won) {
 function resetGame() {
     wrongGuessCount = 0;
     guessesText.innerText = `0 / ${maxWrong}`;
-    hangmanImg.src = `/lab8/hangman-game-images/images/hangman-0.svg`;
+    hangmanImg.src = `/hangman-game-images/images/hangman-0.svg`;
 
     gameModal.classList.remove("show");
     generateKeyboard();
