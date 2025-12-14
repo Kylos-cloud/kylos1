@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student GPA Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Сурагчийн Голч тооцоологч</h1>
+        <button class="dark-toggle" onclick="toggleDarkMode()">Харанхуй горим</button>
+    </header>
+
+    <!-- Student Info -->
+    <section class="card">
+        <h2>Сурагчийн мэдээлэл</h2>
+        <div class="student-form">
+            <input type="text" id="studentName" placeholder="Сурагчийн нэр">
+            <input type="text" id="studentId" placeholder="Сурагчийн дугаар">
+            <input type="number" id="subjectCount" placeholder="Нийт хичээлийн тоо" min="1">
+            <button onclick="generateSubjects()">Хичээл үүсгэх</button>
+        </div>
+        <p class="error" id="errorMsg"></p>
+    </section>
+
+    <section class="card">
+        <h2>Хичээлүүд & Дүн</h2>
+        <form id="subjectsForm"></form>
+    </section>
+
+    <button class="calculate" onclick="calculateGPA()">Голч тооцоолох</button>
+
+    <section class="card">
+        <h2>Голч график</h2>
+        <canvas id="gpaChart"></canvas>
+    </section>
+
+    <section class="card">
+        <h2>Сурагчдын жагсаалт</h2>
+        <input type="text" id="search" placeholder="Нэр эсвэл дугаараар хайх" onkeyup="renderTable()">
+        
+        <div class="actions">
+            <button onclick="exportPDF()">PDF Болгох</button>
+            <button onclick="exportExcel()">Excel Болгох</button>
+            <button onclick="generateRandomStudents()">Санамсаргүй сурагчид</button>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Нэр</th>
+                <th>Дугаар</th>
+                <th>Голч</th>
+                <th>Үйлдэл</th>
+            </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
