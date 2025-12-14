@@ -263,18 +263,55 @@ td button:hover {
     margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
+/* Tablet and below */
+@media (max-width: 968px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
     h1 {
-        font-size: 22px;
+        font-size: 24px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 18px;
     }
     
     header {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        padding: 18px;
+    }
+    
+    .dark-toggle {
+        width: 100%;
     }
     
     .student-form {
         grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 18px;
+        margin-bottom: 15px;
     }
     
     #subjectsForm .row {
@@ -287,5 +324,92 @@ td button:hover {
     
     .actions button {
         width: 100%;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    th:first-child,
+    td:first-child {
+        padding-left: 10px;
+    }
+    
+    th:last-child,
+    td:last-child {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    input, button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .calculate {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    table {
+        font-size: 13px;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    td button {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    
+    /* Make table scrollable on very small screens */
+    .card:last-child {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 500px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    body {
+        padding: 5px;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    
+    header {
+        padding: 12px;
+    }
+    
+    .card {
+        padding: 12px;
     }
 }
