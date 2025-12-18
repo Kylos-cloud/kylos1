@@ -23,6 +23,7 @@ html, body {
     position: relative;
     width: 100%;
     background-color: #ffffff;
+    padding-top: 114px;
 }
 
 /* NAVBAR */
@@ -78,18 +79,31 @@ nav {
 }
 
 /* NAV2 - Announcement Bar */
-.nav2{
-    color: white;
+.nav2 {
+    position: fixed;
+    top: 66px;              /* desktop default */
+    left: 0;
+    width: 100%;
+
     background-color: #1d1d1f;
-    height: 48px;
-    width: 100vw;
+    color: white;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     font-size: 14px;
-    margin-top: 44px;
+    line-height: 1.4;
+
+    padding: 12px 16px;     /* THIS controls height */
+    height: auto;           /* ✅ critical */
+    min-height: 48px;
+
     text-align: center;
-    padding: 0 20px;
+    z-index: 9998;
+
+    white-space: normal;    /* ✅ allow wrapping */
+    overflow: visible;      /* ✅ allow growth */
 }
 
 .nav2 a{
@@ -156,7 +170,6 @@ nav {
     height: 60px;
     margin-bottom: 8px;
 }
-
 /* Hero with light background */
 .hero{
     background-image: url("Assests1/first.png");
@@ -350,41 +363,48 @@ nav {
     margin-bottom: 12px;
 }
 
-/* Target the text wrapper inside the specific grid sections */
-.section4-1 .hero-section-p, 
-.section4-2 .hero-section-p {
-    bottom: auto; /* Remove the bottom constraint */
-    top: 50px;    /* Position at the top */
-    justify-content: flex-start; /* Align content to start from top */
-}
-
-/* Ensure the SVG Logos have the right size and spacing */
-.section4-1 .hero-section-p img, 
-.section4-2 .hero-section-p img {
-    height: 42px; /* Adjust logo size */
-    width: auto;
-    margin-bottom: 10px;
-}
-/* Adjust the headlines under the logo */
-.section4-1 .hero-section-p h3, 
-.section4-2 .hero-section-p h3 {
-    font-size: 24px;
-    max-width: 300px; /* Prevent text from getting too wide */
-    line-height: 1.3;
-}
-/* Ensure the background images (the devices) are positioned correctly */
-/* This pushes the device image to the bottom so it doesn't clash with text */
-.section4-1, .section4-2 {
-    background-position: center bottom 50px; /* Center X, Bottom Y with padding */
-    background-size: 300px; /* Adjust based on your image resolution */
+/* iPad Air section - Full background image */
+.section4-1 {
+    background-image: url("Assests1/ipad-air.png");
+    background-size: cover; /* Fill entire section with image */
+    background-position: center center; /* Center the image */
     background-repeat: no-repeat;
 }
-.section4-1{
-    background-image: url("Assests1/ipad-air.png");
+
+/* iPad Air - Content at TOP */
+.section4-1 .hero-section-p {
+    bottom: auto; /* Remove default bottom positioning */
+    top: 50px; /* Position from top */
+    justify-content: flex-start; /* Align content to top */
+    align-items: center; /* Center horizontally */
+    text-align: center;
 }
 
-.section4-2{
-    background-image: url("Assests1/apple-watch-series-11.png");
+/* Watch - Content at TOP */
+.section4-2 .hero-section-p {
+    bottom: auto; /* Remove default bottom positioning */
+    top: 50px; /* Position from top */
+    justify-content: flex-start; /* Align content to top */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+}
+
+/* Logo styling - SINGLE DEFINITION */
+.section4-1 .hero-section-p img,
+.section4-2 .hero-section-p img {
+    height: 50px; /* Consistent size */
+    width: auto;
+    margin-bottom: 15px;
+}
+
+/* Subtitle styling */
+.section4-1 .hero-section-p h3,
+.section4-2 .hero-section-p h3 {
+    color: black;
+    font-size: 24px;
+    margin-top: 5px;
+    max-width: 300px; /* Prevent text from being too wide */
+    line-height: 1.3;
 }
 
 .section5-1{
@@ -403,6 +423,29 @@ nav {
     background-position: center;
 }
 
+/* Move both iPad and MacBook Air text to TOP */
+.section5-1 .hero-section-p,
+.section5-2 .hero-section-p {
+    bottom: auto;
+    top: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 400; /* Bold */
+}
+/* Make h3 bold for both iPad and MacBook sections */
+.section5-1 .hero-section-p h3,
+.section5-2 .hero-section-p h3 {
+    font-weight: 700; /* Bold */
+}
+
+.section5-1 .hero-section-p p,
+.section5-2 .hero-section-p p {
+    margin: 0;          /* Remove all margin */
+    padding: 0;         /* Remove padding */
+    line-height: 1;     /* Very tight */
+}
+
 .section6-1{
     width: 50%;
     height: 692px;
@@ -414,15 +457,53 @@ nav {
 .section6-2{
     width: 50%;
     height: 692px;
-    background-image: url("Assests1/card5.jpg");
+    background-image: url("Assests1/tradein.png");
     background-size: cover;
     background-position: center;
 }
+/* This shows full image without cropping */
+.section6-1 {
+    background-size: contain;
+    background-position: center center;
+}
 
+.section6-2 {
+    background-size: contain;
+    background-position: center center;
+}
+
+/* Move Apple Card & Trade-In text to TOP */
+.section6-1 .hero-section-p,
+.section6-2 .hero-section-p {
+    bottom: auto !important;  /* Remove bottom positioning */
+    top: 50px !important;     /* Position from top */
+    justify-content: flex-start; /* Align to top */
+    align-items: center;      /* Center horizontally */
+    text-align: center;
+    color: #000;
+}
+
+.section6-1 .hero-section-p p,
+.section6-2 .hero-section-p p {
+    margin: 0;          /* Remove all margin */
+    padding: 0;         /* Remove padding */
+    line-height: 1;     /* Very tight */
+}
+
+/* Adjust background positioning with contain */
+.section6-1 {
+    background-size: contain;
+    background-position: center bottom 100px; /* Push image down */
+}
+
+.section6-2 {
+    background-size: contain;
+    background-position: center bottom 120px; /* Push image further down */
+}
 /* APPLE STYLE SLIDER - Дэлгэц дүүрэн, текст доод талд */
 .apple-slider {
     width: 100%; /* ✅ was 100vw */
-    height: 100vh;
+    height: 100svh;
     min-height: 692px;
     background-color: #000;
     position: relative;
@@ -928,3 +1009,180 @@ footer{
     flex-direction: column;
 }
 
+/* ========================= */
+/* 📱 MOBILE (≤ 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    height: 56px;
+  }
+
+  .nav-items {
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  /* Hide desktop nav links */
+  .nav-items a {
+    display: none;
+  }
+
+  /* Keep icons visible (menu, search, bag) */
+  .nav-items i {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .nav2 {
+    top: 56px;
+    font-size: 13px;
+    padding: 10px 14px;
+    height: auto;
+    white-space: normal;
+  }
+
+  /* Push content below fixed bars */
+  #page1 {
+    padding-top: 104px; /* 56 + ~48 */
+  }
+
+  /* HERO SECTIONS */
+  .hero-section {
+    height: 560px;
+    margin-bottom: 8px;
+  }
+
+  .hero-section-p {
+    bottom: 50px;
+    padding: 0 16px;
+  }
+
+  .hero-section-p h2 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .hero-section-p h3 {
+    font-size: 19px;
+  }
+
+  /* BUTTONS */
+  .links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .links a {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* TWO-COLUMN → SINGLE COLUMN */
+  .hero-section4 {
+    flex-direction: column;
+  }
+
+  .section5-1,
+  .section5-2,
+  .section6-1,
+  .section6-2 {
+    width: 100%;
+    height: 560px;
+  }
+
+  /* SLIDER TEXT */
+  .slide-title {
+    font-size: 36px;
+  }
+
+  .slide-subtitle {
+    font-size: 20px;
+  }
+
+  .slide-description {
+    font-size: 16px;
+  }
+
+  .slide-content {
+    padding: 0 20px 60px 20px;
+  }
+
+  /* FOOTER */
+  .footer2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .panel3 {
+    text-align: left;
+  }
+}
+/* ========================= */
+/* 📲 TABLET (769px – 1024px) */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .hero-section {
+    height: 640px;
+  }
+
+  .hero-section-p h2 {
+    font-size: 44px;
+  }
+
+  .hero-section-p h3 {
+    font-size: 22px;
+  }
+
+  .links a {
+    font-size: 16px;
+  }
+
+  .slide-title {
+    font-size: 56px;
+  }
+
+  .slide-subtitle {
+    font-size: 24px;
+  }
+
+  .slide-description {
+    font-size: 18px;
+  }
+
+  .hero-section4 {
+    gap: 10px;
+  }
+}
+/* ========================= */
+/* 🖥️ LARGE SCREENS (≥ 1440px) */
+/* ========================= */
+@media (min-width: 1440px) {
+
+  .hero-section {
+    height: 760px;
+  }
+
+  .hero-section-p h2 {
+    font-size: 64px;
+  }
+
+  .hero-section-p h3 {
+    font-size: 30px;
+  }
+
+  .slide-title {
+    font-size: 80px;
+  }
+
+  .slide-subtitle {
+    font-size: 32px;
+  }
+
+  .slide-description {
+    font-size: 22px;
+  }
+}
