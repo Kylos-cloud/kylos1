@@ -262,37 +262,6 @@ td button:hover {
     width: 100%;
     margin-bottom: 15px;
 }
-.keyboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.keyboard button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    text-transform: uppercase;
-    background: #5a67d8;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* Correct guess */
-.keyboard button:disabled {
-    background: #a0aec0;
-    opacity: 1; 
-    cursor: not-allowed;
-}
-
-/* Wrong guess */
-.keyboard button.wrong {
-    background: #e53e3e;
-    opacity: 0.8;
-}
 /* Tablet and below */
 @media (max-width: 968px) {
     .container {
