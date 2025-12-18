@@ -21,19 +21,18 @@ html, body {
 
 #page1{
     position: relative;
-    width: 100vw;
+    width: 100%;
     background-color: #ffffff;
 }
 
 /* NAVBAR */
-/* NAVBAR */
-nav{
+nav {
     height: 66px;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
-    width: 100vw;
+    width: 100%; /* ✅ was 100vw */
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     color: white;
     position: fixed;
@@ -45,7 +44,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 28px;              /* ⭐ spacing that stays centered */
+    gap: 28px;
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
@@ -72,6 +71,10 @@ nav{
 
 .nav-items i:hover{
     color: white;
+}
+
+.nav-dark {
+    background-color: rgba(0, 0, 0, 0.92) !important;
 }
 
 /* NAV2 - Announcement Bar */
@@ -339,31 +342,6 @@ nav{
     outline-offset: 2px;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
-@media (max-width: 768px) {
-    .links {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        max-width: 280px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .links a {
-        width: 100%;
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 480px) {
-    .links a {
-        font-size: 15px;
-        padding: 10px 18px;
-    }
-}
 /* TWO-COLUMN GRID */
 .hero-section4{
     width: 100%;
@@ -372,14 +350,35 @@ nav{
     margin-bottom: 12px;
 }
 
-.section4-1, .section4-2{
-    width: 50%;
-    height: 692px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* Target the text wrapper inside the specific grid sections */
+.section4-1 .hero-section-p, 
+.section4-2 .hero-section-p {
+    bottom: auto; /* Remove the bottom constraint */
+    top: 50px;    /* Position at the top */
+    justify-content: flex-start; /* Align content to start from top */
 }
 
+/* Ensure the SVG Logos have the right size and spacing */
+.section4-1 .hero-section-p img, 
+.section4-2 .hero-section-p img {
+    height: 42px; /* Adjust logo size */
+    width: auto;
+    margin-bottom: 10px;
+}
+/* Adjust the headlines under the logo */
+.section4-1 .hero-section-p h3, 
+.section4-2 .hero-section-p h3 {
+    font-size: 24px;
+    max-width: 300px; /* Prevent text from getting too wide */
+    line-height: 1.3;
+}
+/* Ensure the background images (the devices) are positioned correctly */
+/* This pushes the device image to the bottom so it doesn't clash with text */
+.section4-1, .section4-2 {
+    background-position: center bottom 50px; /* Center X, Bottom Y with padding */
+    background-size: 300px; /* Adjust based on your image resolution */
+    background-repeat: no-repeat;
+}
 .section4-1{
     background-image: url("Assests1/ipad-air.png");
 }
@@ -415,20 +414,17 @@ nav{
 .section6-2{
     width: 50%;
     height: 692px;
-    background-image: url("Assests/card5.jpg");
+    background-image: url("Assests1/card5.jpg");
     background-size: cover;
     background-position: center;
 }
 
-/* SLIDER */
-/* SLIDER */
-/* APPLE STYLE SLIDER - Дэлгэц дүүрэн */
 /* APPLE STYLE SLIDER - Дэлгэц дүүрэн, текст доод талд */
 .apple-slider {
-    width: 100vw;
-    height: 100vh; /* Дэлгэц дүүрэн өндөр */
+    width: 100%; /* ✅ was 100vw */
+    height: 100vh;
     min-height: 692px;
-    background-color: #000000;
+    background-color: #000;
     position: relative;
     overflow: hidden;
     margin-bottom: 12px;
@@ -658,119 +654,6 @@ nav{
 .swiper-pagination-bullet-active {
     background: white;
 }
-
-/* RESPONSIVE DESIGN - Бүх төхөөрөмжид тохиромжтой */
-@media (max-width: 1068px) {
-    .slide-title {
-        font-size: 56px;
-    }
-    
-    .slide-subtitle {
-        font-size: 24px;
-    }
-    
-    .slide-description {
-        font-size: 19px;
-    }
-    
-    .slide-caption {
-        font-size: 16px;
-    }
-    
-    .slide-content {
-        padding: 0 30px 70px 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .apple-slider {
-        height: 80vh;
-        min-height: 500px;
-    }
-    
-    .apple-slide {
-        padding-bottom: 40px;
-        align-items: flex-end;
-    }
-    
-    .slide-title {
-        font-size: 40px;
-    }
-    
-    .slide-subtitle {
-        font-size: 20px;
-    }
-    
-    .slide-description {
-        font-size: 17px;
-    }
-    
-    .slide-caption {
-        font-size: 15px;
-        max-width: 400px;
-    }
-    
-    .slide-content {
-        padding: 0 20px 60px 20px;
-    }
-    
-    .slide-buttons {
-        flex-direction: column;
-        align-items: flex-start; /* Товчнууд зүүн талд эхлэх */
-        gap: 12px;
-    }
-    
-    .slide-buttons a {
-        width: auto; /* Өргөнийг автоматаар тохируулах */
-        max-width: 280px;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none; /* Жижиг дэлгэцэд нуух */
-    }
-    
-    .swiper-pagination {
-        bottom: 30px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .apple-slider {
-        height: 70vh;
-        min-height: 400px;
-    }
-    
-    .apple-slide {
-        padding-bottom: 30px;
-    }
-    
-    .slide-title {
-        font-size: 32px;
-    }
-    
-    .slide-subtitle {
-        font-size: 18px;
-    }
-    
-    .slide-description {
-        font-size: 16px;
-    }
-    
-    .slide-caption {
-        font-size: 14px;
-        max-width: 300px;
-    }
-    
-    .slide-content {
-        padding: 0 15px 50px 15px;
-    }
-    
-    .slide-buttons a {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
 /* FOOTER */
 footer{
     position: relative; /* Add this */
@@ -930,27 +813,35 @@ footer{
 }
 
 /* MOBILE MENU */
-.subnav{
+.subnav {
     height: 100vh;
-    width: 100vw;
-    display: none;
+    width: 100%;
     position: fixed;
-    top: -100%;
-    left: 0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: saturate(180%) blur(20px);
+
     z-index: 9998;
-    transition: top 0.4s cubic-bezier(0.28, 0.11, 0.32, 1);
-    padding: 80px 40px;
+
+    display: flex; /* ✅ always rendered */
     flex-direction: column;
     gap: 20px;
+    padding: 80px 40px;
+
+    transform: translateY(-100%);
+    transition: transform 0.45s cubic-bezier(0.28, 0.11, 0.32, 1);
+
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .subnav.active {
-    top: 0;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
 }
 
-.subnav i{
+.subnav i {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -959,7 +850,7 @@ footer{
     cursor: pointer;
 }
 
-.subnav a{
+.subnav a {
     text-decoration: none;
     color: white;
     font-size: 28px;
@@ -968,7 +859,7 @@ footer{
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.subnav a:hover{
+.subnav a:hover {
     color: #2997ff;
 }
 
@@ -1037,59 +928,3 @@ footer{
     flex-direction: column;
 }
 
-/* RESPONSIVE */
-.ri-menu-line{
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .nav-items a{
-        display: none;
-    }
-    
-    .ri-menu-line{
-        display: block;
-    }
-    
-    .ri-search-line,
-    .ri-shopping-bag-line {
-        display: block;
-    }
-    
-    .hero-section{
-        height: 580px;
-    }
-    
-    .hero-section-p h2{
-        font-size: 40px;
-    }
-    
-    .hero-section-p h3{
-        font-size: 21px;
-    }
-    
-    .hero-section4{
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .section4-1, .section4-2,
-    .section5-1, .section5-2,
-    .section6-1, .section6-2{
-        width: 100%;
-        height: 580px;
-    }
-    
-    .footer2{
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .panel2{
-        flex-direction: column;
-    }
-    
-    .panel2 li{
-        margin-bottom: 8px;
-    }
-}

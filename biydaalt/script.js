@@ -96,10 +96,11 @@ function calculateGPA() {
     let totalPoints = 0;
 
     for (let i = 0; i < scores.length; i++) {
-        if (!credits[i].value || !scores[i].value) {
-            showError("Fill all subject fields");
-            return;
+        if (credits[i].value === "" ||scores[i].value === "" || Number(credits[i].value) <= 0 || Number(scores[i].value) < 0) {
+        showError("Please enter valid credits and scores");
+        return;
         }
+
 
         const c = Number(credits[i].value);
         const s = Number(scores[i].value);
