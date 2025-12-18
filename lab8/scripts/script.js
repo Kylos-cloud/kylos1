@@ -51,35 +51,39 @@ function displayWord() {
 }
 
 function handleGuess(letter, button) {
-    let indices = [];
+    const currentIndex = revealed.indexOf(false);
+    if (currentIndex === -1) return;
 
-    for (let i = 0; i < selectedWord.length; i++) {
-        if (selectedWord[i] === letter && !revealed[i]) {
-            indices.push(i);
-        }
-    }
-
-    if (indices.length === 0) {
-        // WRONG GUESS
+    //
+    if (selectedWord[currentIndex] !== letter) {
         wrongGuessCount++;
         guessesText.innerText = `${wrongGuessCount} / ${maxWrong}`;
         hangmanImg.src = `hangman-game-images/images/hangman-${wrongGuessCount}.svg`;
 
-        button.disabled = true;
+        button.classList.add("wrong");
 
-        if (wrongGuessCount >= maxWrong) return gameOver(false);
+        if (wrongGuessCount >= maxWrong) {
+            gameOver(false);
+        }
         return;
     }
 
-    // Reveal ONLY ONE letter (the first unrevealed)
-    revealed[indices[0]] = true;
+    // left->right
+    revealed[currentIndex] = true;
     displayWord();
 
-    // Disable key if no more occurrences left
-    if (indices.length === 1) button.disabled = true;
+    // zuvhun ter useg ni duussn tohioldold disable hiine 
+    const stillNeeded = selectedWord
+        .split("")
+        .some((ch, i) => ch === letter && !revealed[i]);
+
+    if (!stillNeeded) {
+        button.disabled = true;
+    }
 
     checkWin();
 }
+
 
 function checkWin() {
     if (revealed.every(v => v)) {
