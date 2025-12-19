@@ -13,10 +13,16 @@
 html, body {
     overflow-x: hidden;
 }
-
 #main{
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    transform: none !important;
+    backface-visibility: hidden;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #page1{
@@ -26,11 +32,9 @@ html, body {
     padding-top: 114px;
 }
 
-/* NAVBAR */
 nav {
     height: 66px;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
     width: 100%; /* ✅ was 100vw */
     display: flex;
     justify-content: center;
@@ -78,10 +82,9 @@ nav {
     background-color: rgba(0, 0, 0, 0.92) !important;
 }
 
-/* NAV2 - Announcement Bar */
 .nav2 {
     position: fixed;
-    top: 66px;              /* desktop default */
+    top: 66px;
     left: 0;
     width: 100%;
 
@@ -95,17 +98,23 @@ nav {
     font-size: 14px;
     line-height: 1.4;
 
-    padding: 12px 16px;     /* THIS controls height */
-    height: auto;           /* ✅ critical */
+    padding: 12px 16px;
     min-height: 48px;
 
     text-align: center;
     z-index: 9998;
 
-    white-space: normal;    /* ✅ allow wrapping */
-    overflow: visible;      /* ✅ allow growth */
-}
+    white-space: normal;
+    overflow: visible;
 
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.18s ease-out,
+        transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+    will-change: opacity, transform;
+}
 .nav2 a{
     color: #2997ff;
     padding-left: 5px;
@@ -115,8 +124,52 @@ nav {
 .nav2 a:hover {
     text-decoration: underline;
 }
+.nav3 {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    width: 100%;
 
-/* HERO SECTIONS */
+    background: rgba(255, 255, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.92);
+
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+
+    transition: opacity 0.18s ease-out,
+                transform 0.18s ease-out;
+
+    z-index: 9997;
+}
+
+.nav3.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav3,
+nav {
+    will-change: opacity, transform;
+}
+
+nav,
+.nav2 {
+    transition: opacity 0.22s ease-out,
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+
+.nav-hidden {
+    transform: translateY(-250%);
+}
+
+.nav3.nav-up {
+    top: 66px;
+}
+
 .hero-section{
     height: 692px;
     width: 100vw;
@@ -229,7 +282,6 @@ nav {
     margin: 4px 0;
 }
 
-/* LINKS */
 .links {
     display: flex;
     justify-content: center;
@@ -238,7 +290,6 @@ nav {
     margin-top: 14px;
 }
 
-/* Base Button Style (Apple's exact style) */
 .links a {
     display: inline-block;
     padding: 12px 22px;
@@ -355,7 +406,6 @@ nav {
     outline-offset: 2px;
 }
 
-/* TWO-COLUMN GRID */
 .hero-section4{
     width: 100%;
     display: flex;
@@ -363,29 +413,28 @@ nav {
     margin-bottom: 12px;
 }
 
-/* iPad Air section - Full background image */
 .section4-1 {
     background-image: url("Assests1/ipad-air.png");
-    background-size: cover; /* Fill entire section with image */
-    background-position: center center; /* Center the image */
+    background-size: cover;
+    background-position: center center; 
     background-repeat: no-repeat;
 }
 
-/* iPad Air - Content at TOP */
+
 .section4-1 .hero-section-p {
-    bottom: auto; /* Remove default bottom positioning */
-    top: 50px; /* Position from top */
-    justify-content: flex-start; /* Align content to top */
-    align-items: center; /* Center horizontally */
+    bottom: auto;
+    top: 50px;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
 }
 
 /* Watch - Content at TOP */
 .section4-2 .hero-section-p {
-    bottom: auto; /* Remove default bottom positioning */
-    top: 50px; /* Position from top */
-    justify-content: flex-start; /* Align content to top */
-    align-items: center; /* Center horizontally */
+    bottom: auto;
+    top: 50px;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
 }
 
@@ -485,24 +534,24 @@ nav {
 
 .section6-1 .hero-section-p p,
 .section6-2 .hero-section-p p {
-    margin: 0;          /* Remove all margin */
-    padding: 0;         /* Remove padding */
-    line-height: 1;     /* Very tight */
+    margin: 0;         
+    padding: 0;        
+    line-height: 1;     
 }
 
-/* Adjust background positioning with contain */
+
 .section6-1 {
     background-size: contain;
-    background-position: center bottom 100px; /* Push image down */
+    background-position: center bottom 100px;
 }
 
 .section6-2 {
     background-size: contain;
-    background-position: center bottom 120px; /* Push image further down */
+    background-position: center bottom 120px;
 }
-/* APPLE STYLE SLIDER - Дэлгэц дүүрэн, текст доод талд */
+
 .apple-slider {
-    width: 100%; /* ✅ was 100vw */
+    width: 100%;
     height: 100svh;
     min-height: 692px;
     background-color: #000;
@@ -518,30 +567,29 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: flex-end; /* Текст доод талд байрлах */
-    justify-content: flex-start; /* Текст зүүн талд байрлах */
+    align-items: flex-end;
+    justify-content: flex-start;
     position: relative;
-    padding-bottom: 60px; /* Доод талын зай */
+    padding-bottom: 60px;
 }
 
-/* Текст бүрийн байршил - Apple.com-ын яг адил (доод талд) */
 .slide-content {
     width: 100%;
     max-width: 1200px;
-    padding: 0 40px 80px 40px; /* Доод талд илүү их зай */
-    text-align: left; /* Текст зүүн талд */
+    padding: 0 40px 80px 40px;
+    text-align: left;
     z-index: 10;
 }
 
 .slide-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Текст зүүн талд эхлэх */
-    gap: 8px; /* Apple-ийн яг адил зай */
-    max-width: 600px; /* Текстийн өргөнийг хязгаарлах */
+    align-items: flex-start; 
+    gap: 8px;
+    max-width: 600px;
 }
 
-/* Слайд тус бүрийн дэвсгэр зураг */
+
 .slide-1 {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
                 url('Assests1/guideg1.png');
@@ -582,16 +630,16 @@ nav {
     color: white;
 }
 
-/* Текст хэв маяг - Apple-ийн яг адил (доод талд) */
+
 .slide-title {
-    font-size: 72px; /* Apple-ийн гол том текст */
+    font-size: 72px; 
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.005em;
     margin: 0;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
     margin-bottom: 8px;
-    text-align: left; /* Текст зүүн талд */
+    text-align: left;
 }
 
 .slide-subtitle {
@@ -602,7 +650,7 @@ nav {
     margin: 0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     margin-bottom: 12px;
-    text-align: left; /* Текст зүүн талд */
+    text-align: left;
 }
 
 .slide-description {
@@ -615,7 +663,7 @@ nav {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Тайлбар текст (Comedy · Same family. New plan.) */
+
 .slide-caption {
     font-size: 17px;
     line-height: 1.47059;
@@ -625,16 +673,15 @@ nav {
     margin: 0 0 25px 0;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
     max-width: 600px;
-    text-align: left; /* Текст зүүн талд */
+    text-align: left;
 }
 
-/* Товчнууд - Apple-ийн яг адил (доод талд) */
 .slide-buttons {
     display: flex;
     gap: 16px;
     margin-top: 15px;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Товчнууд зүүн талд эхлэх */
+    justify-content: flex-start;
 }
 
 .slide-buttons a {
@@ -652,9 +699,8 @@ nav {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* SPIRITED слайдын товчнууд */
 .slide-1 .btn-stream {
-    background-color: #0071e3; /* Цэнхэр товч болгох */
+    background-color: #0071e3;
     color: white;
     border: 1px solid transparent;
 }
@@ -663,7 +709,7 @@ nav {
     background-color: #0077ed;
 }
 
-/* Бусад слайдын товчнууд */
+
 .btn-shop, .btn-buy {
     background-color: #0071e3;
     color: white;
@@ -681,7 +727,6 @@ nav {
     margin-right: 8px;
 }
 
-/* Swiper navigation - Apple стильд тохируулах */
 .swiper {
     width: 100%;
     height: 100%;
@@ -697,7 +742,7 @@ nav {
     backdrop-filter: saturate(180%) blur(20px);
     transition: all 0.3s;
     top: auto;
-    bottom: 100px; /* Навигацийн товчнууд тексттэй зэрэгцэх */
+    bottom: 100px;
     transform: translateY(0);
     margin-top: 0;
 }
@@ -722,7 +767,7 @@ nav {
 }
 
 .swiper-pagination {
-    bottom: 40px !important; /* Текстээс доош байрлах */
+    bottom: 40px !important;
 }
 
 .swiper-pagination-bullet {
@@ -735,10 +780,10 @@ nav {
 .swiper-pagination-bullet-active {
     background: white;
 }
-/* FOOTER */
+
 footer{
-    position: relative; /* Add this */
-    z-index: 10;       /* Add this */
+    position: relative;
+    z-index: 10;
     background-color: #f5f5f7;
     color: #6e6e73;
     padding: 20px 0;
@@ -796,7 +841,6 @@ footer{
     text-decoration: none;
 }
 
-/* Footer heading styles */
 .footer2 h4 {
     font-size: 12px;
     font-weight: 600;
@@ -860,13 +904,13 @@ footer{
     margin-bottom: 8px;
     flex: 2;
     justify-content: center;
-    gap: 20px; /* Added gap instead of margin-right */
+    gap: 20px;
 }
 
 .panel2 li {
     list-style: none;
     cursor: pointer;
-    color: #424245; /* Make the text visible */
+    color: #424245;
     white-space: nowrap;
 }
 
@@ -893,7 +937,6 @@ footer{
     text-decoration: underline;
 }
 
-/* MOBILE MENU */
 .subnav {
     height: 100vh;
     width: 100%;
@@ -943,24 +986,6 @@ footer{
 .subnav a:hover {
     color: #2997ff;
 }
-
-/* NAV3 - Store Menu */
-.nav3{
-    height: 100vh;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    z-index: 9997;
-    transition: top 0.4s cubic-bezier(0.28, 0.11, 0.32, 1);
-    pointer-events: none;
-}
-
-.nav3.active {
-    top: 44px;
-    pointer-events: all;
-}
-
 .nav-top{
     height: 50vh;
     background-color: rgba(0, 0, 0, 0.92);
@@ -1009,12 +1034,8 @@ footer{
     flex-direction: column;
 }
 
-/* ========================= */
-/* 📱 MOBILE (≤ 768px) */
-/* ========================= */
 @media (max-width: 768px) {
 
-  /* NAVBAR */
   nav {
     height: 56px;
   }
@@ -1024,18 +1045,15 @@ footer{
     padding: 0 16px;
   }
 
-  /* Hide desktop nav links */
   .nav-items a {
     display: none;
   }
 
-  /* Keep icons visible (menu, search, bag) */
   .nav-items i {
     display: inline-block;
     font-size: 20px;
   }
 
-  /* ANNOUNCEMENT BAR */
   .nav2 {
     top: 56px;
     font-size: 13px;
@@ -1044,12 +1062,10 @@ footer{
     white-space: normal;
   }
 
-  /* Push content below fixed bars */
   #page1 {
-    padding-top: 104px; /* 56 + ~48 */
+    padding-top: 104px;
   }
 
-  /* HERO SECTIONS */
   .hero-section {
     height: 560px;
     margin-bottom: 8px;
@@ -1080,7 +1096,6 @@ footer{
     max-width: 280px;
   }
 
-  /* TWO-COLUMN → SINGLE COLUMN */
   .hero-section4 {
     flex-direction: column;
   }
@@ -1120,9 +1135,6 @@ footer{
     text-align: left;
   }
 }
-/* ========================= */
-/* 📲 TABLET (769px – 1024px) */
-/* ========================= */
 @media (min-width: 769px) and (max-width: 1024px) {
 
   .hero-section {
@@ -1157,9 +1169,6 @@ footer{
     gap: 10px;
   }
 }
-/* ========================= */
-/* 🖥️ LARGE SCREENS (≥ 1440px) */
-/* ========================= */
 @media (min-width: 1440px) {
 
   .hero-section {

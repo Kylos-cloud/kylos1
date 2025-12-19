@@ -1,64 +1,83 @@
-// ================================
-// GLOBAL ELEMENTS (MUST BE FIRST)
-// ================================
-const nav = document.querySelector("nav");
 const menuBtn = document.querySelector(".ri-menu-line");
 const closeBtn = document.querySelector(".ri-close-line");
 const mobileMenu = document.querySelector(".subnav");
-const storeBtn = document.querySelector("#Store");
-const storeMenu = document.querySelector(".nav3");
 const navBottom = document.querySelector(".nav-bottom");
+const navItems = document.querySelector('.nav-items');
 
-// ================================
-// LOCOMOTIVE SCROLL + GSAP
-// ================================
-gsap.registerPlugin(ScrollTrigger);
+const storeBtn = document.getElementById("Store");
+const storeMenu = document.querySelector(".nav3");
 
-const scrollContainer = document.querySelector("#main");
+let isOpen = false;
 
-// Initialize Locomotive Scroll
-const locoScroll = new LocomotiveScroll({
-    el: scrollContainer,
-    smooth: true,
-    multiplier: 0.8,
-    smartphone: { smooth: true },
-    tablet: { smooth: true },
+function openMenu() {
+    if (isOpen) return;
+    storeMenu.classList.add("active");
+    storeMenu.classList.add("nav-up");
+    nav2.classList.add("nav-hidden");
+    isOpen = true;
+}
+
+function closeMenu() {
+    if (!isOpen) return;
+    storeMenu.classList.remove("active");
+    storeMenu.classList.remove("nav-up");
+    nav2.classList.remove("nav-hidden");
+    isOpen = false;
+}
+
+
+storeBtn.addEventListener("mouseenter", openMenu);
+
+storeMenu.addEventListener("mouseenter", openMenu);
+
+storeBtn.addEventListener("mouseleave", (e) => {
+    if (!storeMenu.contains(e.relatedTarget)) {
+        closeMenu();
+    }
 });
 
-// GSAP <-> Locomotive bridge
-ScrollTrigger.scrollerProxy(scrollContainer, {
-    scrollTop(value) {
-        if (arguments.length) {
-            locoScroll.scrollTo(value, { duration: 0, disableLerp: true });
-        } else {
-            return locoScroll.scroll.instance.scroll.y;
-        }
+storeMenu.addEventListener("mouseleave", (e) => {
+    if (!storeBtn.contains(e.relatedTarget)) {
+        closeMenu();
+    }
+});
+
+let lastScrollY = window.scrollY;
+const nav = document.querySelector("nav");
+const nav2 = document.querySelector(".nav2");
+
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        nav.classList.add("nav-hidden");
+        nav2.classList.add("nav-hidden");
+    }
+    else {
+        nav.classList.remove("nav-hidden");
+        nav2.classList.remove("nav-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+});
+
+const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 800,
+
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
     },
-    getBoundingClientRect() {
-        return {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight,
-        };
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-    pinType:
-        getComputedStyle(scrollContainer).transform !== "none"
-            ? "transform"
-            : "fixed",
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
 
-// Use #main as default scroller
-ScrollTrigger.defaults({
-    scroller: scrollContainer,
-});
-
-// Scroll events
-locoScroll.on("scroll", (obj) => {
-    ScrollTrigger.update();
-    nav?.classList.toggle("nav-dark", obj.scroll.y > 50);
-});
-
-// Keep everything in sync
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
